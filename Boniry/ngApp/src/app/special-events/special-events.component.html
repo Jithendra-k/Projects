@@ -1,0 +1,40 @@
+
+<div class="row mt-5">
+  <div class="col-md-4 mb-3" *ngFor="let event of specialEvents">
+    <div class="card text-center">
+      <div class="card-body" style="background-image: url('../assets/wedding-callout-400x300.jpg');">
+        <h5 class="card-title">{{event.name}}</h5>
+        <p class="card-text">{{event.description}}</p>
+        <!-- <a href="#" class="btn btn-success">Buy Tickets</a> -->
+      </div>
+      <div class="card-footer text-muted" >
+        <h6 style="background-color:rgba(209, 159, 66, 0.829);">{{event.date | date:'shortDate'}} || {{event.time}}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="btn btn-custom right">
+    <input style="color: #C0C0C0;" type="text" class="form-control" placeholder="Search" [(ngModel)]="selectedString"/>
+  </div>
+  <div class="center" id="Link1">
+    <button type="button" (click)="registerEvent()" class="btn btn-primary float-right">Register for Event</button>
+    <!-- <a href="#" class="btn btn-success" id="Link1">Buy Tickets</a> -->
+  </div><br>
+  
+</div>
+<div class="card">
+<table class="responsive-table highlight">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let item of (items | filter:selectedString)">
+    <td>{{item.name }}</td>
+    <td>{{item.date | date:"shortDate"}}</td>
+  </tr>
+</table>
+</div>
+
+

@@ -1,0 +1,79 @@
+<body>
+  <h1 style="text-align:center;">Boniry Events</h1><hr>
+  <div class="row" >
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content white-text">
+            <div class="row">
+              <div class="col s5">
+                <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_eventService.selectedEvent._id">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="name" #name="ngModel" [(ngModel)]="_eventService.selectedEvent.name" placeholder="Enter Event name" required>
+                      <label class="black-text">Event Name :
+                        <label class="red-text">*</label>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="occasion" #name="ngModel" [(ngModel)]="_eventService.selectedEvent.occasion" placeholder="Eg:Event occasion">
+                      <label class="black-text">Event occasion:</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="date_and_venue" #name="ngModel" [(ngModel)]="_eventService.selectedEvent.date_and_venue" placeholder="Enter Event location">
+                      <label class="black-text">Event details :</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="budget" #name="ngModel" [(ngModel)]="_eventService.selectedEvent.budjet" placeholder="Enter Event budget">
+                      <label class="black-text">Event Price:</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <button class="btn btn-custom right" type="button" (click)="resetForm(eventForm)">Reset</button>
+                      <button class="btn btn-custom right" type="submit" [disabled]="!eventForm.valid">Schedule Event</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col s7">
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Event Name</th>
+                        <th>Event Details</th>
+                        <th>Event location</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let emp of _eventService.events">
+                      <td>{{emp.name}}</td>
+                      <td>{{emp.occasion}}</td>
+                      <td>{{emp.date_and_venue}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(emp)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(emp._id,eventForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    </body>
+  
+    

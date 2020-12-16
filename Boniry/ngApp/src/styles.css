@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+    /* background-image : url("");*/
+     height: 60%;
+ 
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+ }
+ form div.input-field input{
+     padding-left: 15px !important;
+     color: #25a297;
+ }
+ 
+ input.ng-invalid.ng-dirty{
+     border-bottom-color : #e91e63 !important;
+     box-shadow: 0 1px 0 0 #e91e63 !important;
+ }
+ 
+ .input-field>label{
+     font-size: 1.2rem;
+     font-weight: bold;
+ }
+ 
+ .btn-custom,.btn-custom:hover,.btn-custom:focus{
+     background-color: transparent;
+     font-size: 1.1rem;
+     margin : 0px 5px;
+     border: rgb(0, 0, 0) solid 1px ;
+     text-transform:none;
+ }
+ 
+ div.card{
+     background-color : #2aa15298;
+     border-radius: 10px;
+  
+ }
+ 
+ .vl {
+     border-left: 2px solid #000000;
+     height: 400px;
+ }
+ 
+ a.action-btn{
+     color: #000000 ;
+     margin: 0px 5px;
+ 
+ }
+ a.action-btn:hover{
+     cursor: pointer;
+ }
+ 
+ #toast-container {
+     top: auto !important;
+     right: auto !important;
+     bottom: 10%;
+     left:7%;
+   }
+   
+body {
+  background-image: url('https://www.wallpapertip.com/wmimgs/66-666819_website-design-background-creative-background-image-for-website.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+} 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
